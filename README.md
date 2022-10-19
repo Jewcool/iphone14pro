@@ -3,4 +3,4 @@
 ## При вёрстке макета использовал :
 - HTML
 - CSS
-###https://jewcool.github.io/iphone14pro/
+- https://jewcool.github.io/iphone14pro/
