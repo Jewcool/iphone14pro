@@ -234,6 +234,12 @@ body {
     border: none;
     cursor: pointer;
     position: relative;
+    z-index: 50;
+  }
+  .logo,
+  .phone {
+    position: relative;
+    z-index: 50; 
   }
   .btn_line {
     position: absolute;
@@ -241,6 +247,7 @@ body {
     width: 100%;
     background-color: #fff;
     height: 2px;
+    transition: 0.3s ease; 
   }
   .btn_line:nth-child(1) {
     top: 0;
@@ -254,8 +261,38 @@ body {
   .btn_line:nth-child(4) {
     top: 40px;
   }
+  .menu_open .btn_line:nth-child(1) {
+    transform: scaleX(0);
+  }
+  .menu_open .btn_line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .menu_open .btn_line:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  .menu_open .btn_line:nth-child(4) {
+    transform: scaleX(0);
+  }
   .menu {
-    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+  .menu_open .menu {
+     transform: translateY(0%);
+  }
+  .menu_item {
+    padding: 50px 0;
+    font-size: 56px;
   }
   .images_new {
   display:  none;
@@ -310,6 +347,20 @@ body {
  .contacts_form {
   padding: 50px 30px;
  }
+}
+@media (max-width: 420px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+  .phone {
+    flex-basis: auto;
+    margin-top: 50px;
+    order: 3;
+    width: 100%;
+  }
+  .menu_item {
+    font-size: 32px;
+  }
 }
 @media (max-width: 375px) {
   .contacts_form {
